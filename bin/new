@@ -1,0 +1,13 @@
+#!/usr/local/opt/rbenv/shims/ruby
+
+def current_epoch()
+  Time.now.strftime("%Y%m%d")
+end
+
+base = File.expand_path("notes/#{current_epoch}.text")
+first = File.exists?(base)
+
+File.open(base, 'a') {|file|
+  file.write("#{"\n" if first}{ #{Time.now.strftime("%Y-%m-%d@%H:%M") } } \n\n") }
+
+exec( "vim \"+normal G$\" +startinsert #{base}" )

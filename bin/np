@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/np'
+
+filename, *flags = ARGV
+
+if filename.nil?
+  puts "usage: np [filename]"
+  exit
+end
+
+np = NoteParser.new(filename)
+np.run
+np.render_buffert
