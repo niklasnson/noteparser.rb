@@ -1,4 +1,4 @@
-#!/usr/local/opt/rbenv/shims/ruby
+#!/usr/bin/env ruby
 
 def current_epoch()
   Time.now.strftime("%Y%m%d")
