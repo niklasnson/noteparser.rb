@@ -10,4 +10,4 @@ first = File.exists?(base)
 File.open(base, 'a') {|file|
   file.write("#{"\n" if first}{ #{Time.now.strftime("%Y-%m-%d@%H:%M") } } \n\n") }
 
-exec( "vim \"+normal G$\" +startinsert #{base}" )
+exec("mvim \"+normal G$\" +startinsert #{base}")
